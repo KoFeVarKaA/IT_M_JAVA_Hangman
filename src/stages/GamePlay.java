@@ -36,6 +36,7 @@ public class GamePlay {
                 return false;
             }
             String ch = scanner.nextLine().toLowerCase();
+            System.out.printf("%n%n%n%n");
             if (usedLetters.contains(ch) || ch.length() != 1 ||
                     !(Arrays.asList(ALLOWED_LETTERS).contains(ch))) {
                 Errors.incorrectInput();
