@@ -1,14 +1,19 @@
+import data.GetRandomWord;
+import stages.GameEndRestart;
+import stages.GamePlay;
+import stages.GameStart;
+
 import java.util.Scanner;
 
 public class Main{
     public void main() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Введите букву: ");
-
-        // 2. Считываем строку, которую ввел пользователь (аналог input() в Python)
-        String input = scanner.nextLine();
-
-        System.out.println("Вы ввели: " + input);
+        while (true) {
+            String word = GetRandomWord.getWord();
+            if (GameStart.start_game()) {
+                boolean isWin = GamePlay.playGame(word);
+                GameEndRestart.endRestartGame(isWin, word);
+            }
+            else break;
+        }
     }
 }

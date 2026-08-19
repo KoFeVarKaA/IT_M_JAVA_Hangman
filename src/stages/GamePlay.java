@@ -44,8 +44,8 @@ public class GamePlay {
             else if (word.contains(ch)) {
                 // Увеличиваем количество угаданных букв на количество
                 // вхождений символа в слово
-                indexWord += word.length() - word.replace("л", "").length();
-                for (int i=0; i<=word.length(); i++) {
+                indexWord += word.length() - word.replace(ch, "").length();
+                for (int i=0; i<word.length(); i++) {
                     if (ch.charAt(0) == word.charAt(i)) {
                         wordMask[i*2+1] = ch.charAt(0);
                     }
@@ -53,7 +53,7 @@ public class GamePlay {
             }
             else indexMan += 1;
 
-            if (usedLetters.contains(ch)) usedLetters = usedLetters + ch + ", ";
+            if (!usedLetters.contains(ch)) usedLetters = usedLetters + ch + ", ";
         }
 
 

@@ -12,10 +12,10 @@ public class Render {
                 %s
                 Использованные буквы: %s
                 Ошибок:%s
-                Введите букву:
-                """, Man.printStage(gameStateDTO.indexMan()),
-                     String.valueOf(gameStateDTO.wordMask()),
-                     gameStateDTO.usedLetters(),
+                Введите букву:  """,
+                Man.printStage(gameStateDTO.indexMan()),
+                     String.valueOf(gameStateDTO.wordMask()).toUpperCase(),
+                     gameStateDTO.usedLetters().toUpperCase(),
                      gameStateDTO.indexMan());
     }
 }

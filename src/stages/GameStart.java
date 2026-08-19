@@ -2,6 +2,7 @@ package stages;
 
 import utils.Errors;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class GameStart {
@@ -9,8 +10,8 @@ public class GameStart {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("Начать новую игру? д/н");
-            String answer = scanner.nextLine();
+            System.out.print("Начать новую игру? д/н   ");
+            String answer = scanner.nextLine().toLowerCase();
             if (answer.equals("д")) {
                 return true;
             }
